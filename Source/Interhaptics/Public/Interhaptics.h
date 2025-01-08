@@ -16,4 +16,8 @@ public:
 	virtual void ShutdownModule() override;
 
 	void* v_Handle;
+
+#if PLATFORM_PS5
+	void* v_dualSenseHandle;
+#endif
 };

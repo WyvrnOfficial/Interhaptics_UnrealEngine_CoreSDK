@@ -12,6 +12,7 @@
 #define HAR_HANDLE FModuleManager::GetModuleChecked<FInterhapticsModule>(FName(TEXT("Interhaptics"))).v_Handle
 
 
+
 bool InterhapticsEngine::Init()
 {
 	bool ret = false;
@@ -239,9 +240,9 @@ void InterhapticsEngine::SetEventIntensity(int _hMaterialID, double _intensity)
 int InterhapticsEngine::startTriggerEffect(int id, bool isLeft)
 {
 #if PLATFORM_PS5
-	if (v_DualSenseHandle)
+	if (FModuleManager::GetModuleChecked<FInterhapticsModule>(FName(TEXT("Interhaptics"))).v_dualSenseHandle)
 	{
-		void* DllExport = FPlatformProcess::GetDllExport(v_DualSenseHandle, *FString("startTriggerEffect"));
+		void* DllExport = FPlatformProcess::GetDllExport(FModuleManager::GetModuleChecked<FInterhapticsModule>(FName(TEXT("Interhaptics"))).v_dualSenseHandle, *FString("startTriggerEffect"));
 		if (DllExport)
 		{
 			typedef int(*GetstartTriggerEffect)(int handle, int id, bool isLeft);
@@ -255,9 +256,9 @@ int InterhapticsEngine::startTriggerEffect(int id, bool isLeft)
 int InterhapticsEngine::stopTriggerEffect(bool isLeft)
 {
 #if PLATFORM_PS5
-	if (v_DualSenseHandle)
+	if (FModuleManager::GetModuleChecked<FInterhapticsModule>(FName(TEXT("Interhaptics"))).v_dualSenseHandle)
 	{
-		void* DllExport = FPlatformProcess::GetDllExport(v_DualSenseHandle, *FString("stopTriggerEffect"));
+		void* DllExport = FPlatformProcess::GetDllExport(FModuleManager::GetModuleChecked<FInterhapticsModule>(FName(TEXT("Interhaptics"))).v_dualSenseHandle, *FString("stopTriggerEffect"));
 		if (DllExport)
 		{
 			typedef int(*GetstopTriggerEffect)(int handle, bool isLeft);

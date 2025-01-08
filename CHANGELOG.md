@@ -1,3 +1,10 @@
+# 2024.12.24
+# v1.4.0
+
++ Updated haptic engine to 1.9.1
++ Platform support modification
++ Minor fix in haptic provider rendering loop
+
 # 2024.10.18
 # v1.3.1
 

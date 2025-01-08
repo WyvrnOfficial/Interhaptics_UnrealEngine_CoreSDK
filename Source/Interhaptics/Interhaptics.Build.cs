@@ -46,19 +46,27 @@ public class Interhaptics : ModuleRules
 		// Adjust the base path to point to the new ThirdParty folder location
 		string ThirdPartyPath = Path.Combine(ModuleDirectory, "Lib", "x64", "Release");
 
-
 		if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
 			PublicDefinitions.Add("PLATFORM_SWITCH=0");
 			PublicDefinitions.Add("PLATFORM_PS5=0");
-			// Add the import library
-			PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "HAR.lib"));
+      PublicDefinitions.Add("PLATFORM_XSX=0");
+
+      // Add the import library
+      PublicAdditionalLibraries.Add(Path.Combine(ThirdPartyPath, "HAR.lib"));
 
 			// Delay-load the DLLs, so we can load them from the right place first
 			PublicDelayLoadDLLs.Add("HAR.dll");
 
 			// Ensure that the DLLs are staged along with the executable
 			RuntimeDependencies.Add(Path.Combine(ThirdPartyPath, "HAR.dll"));
+		}
+
+    if (Target.Platform.ToString() == "XSX")
+    {
+      PublicDefinitions.Add("PLATFORM_XSX=1");
+      PublicDefinitions.Add("PLATFORM_SWITCH=0");
+			PublicDefinitions.Add("PLATFORM_PS5=0");
 		}
 	}
 }

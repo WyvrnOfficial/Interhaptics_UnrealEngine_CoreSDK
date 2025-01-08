@@ -61,6 +61,7 @@ void FInterhapticsModule::StartupModule()
         {
           UE_LOG(LogTemp, Warning, TEXT("Failed to spawn HapticManager."));
         }
+		HapticManager = nullptr;
       }
     });
 #pragma endregion

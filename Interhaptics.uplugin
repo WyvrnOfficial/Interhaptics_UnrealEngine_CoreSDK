@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.3.1",
+  "VersionName": "1.4.0",
   "FriendlyName": "Interhaptics",
   "Description": "Interhaptics UE SDK",
   "Category": "Other",
@@ -20,7 +20,7 @@
     "Name": "Interhaptics",
     "Type": "Runtime",
     "LoadingPhase": "Default",
-    "WhitelistPlatforms": [ "Win64", "Switch", "PS5" ]
+    "WhitelistPlatforms": [ "Win64", "Switch", "PS5", "XSX" ]
   },
   {
     "Name": "IHGameInput",
@@ -38,7 +38,7 @@
     "Name": "HapticEffect",
     "Type": "Runtime",
     "LoadingPhase": "Default",
-    "WhitelistPlatforms": [ "Win64", "Switch", "PS5" ]
+    "WhitelistPlatforms": [ "Win64", "Switch", "PS5", "XSX" ]
   },
   {
     "Name": "HapticEffectEditor",

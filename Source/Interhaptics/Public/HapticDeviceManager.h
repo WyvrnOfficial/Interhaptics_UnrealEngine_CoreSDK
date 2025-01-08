@@ -19,8 +19,6 @@ namespace InterhapticsEngine
 		void RenderAll();
 		void CleanAll();
 		INTERHAPTICS_API void AddProvider(void* deviceHandle);
-
-		std::vector<void*> IH_DEVICE_PROVIDERS;
-
+		INTERHAPTICS_API int GetProviderCount();
   };
 };

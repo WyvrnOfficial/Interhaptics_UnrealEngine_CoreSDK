@@ -46,7 +46,7 @@ void AHapticManager::BeginPlay()
 
 void AHapticManager::UpdateHaptics()
 {
-  if (!InterhapticsEngine::HapticDeviceManager::IH_DEVICE_PROVIDERS.empty())  // Check if there are any devices
+  if (InterhapticsEngine::HapticDeviceManager::GetProviderCount() > 0)  // Check if there are any devices
   {
     InterhapticsEngine::ComputeAllEvents((double)(GetWorld()->GetTimeSeconds()));
     InterhapticsEngine::HapticDeviceManager::RenderAll();
