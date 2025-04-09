@@ -14,6 +14,6 @@ Next you can create a new Blueprint with the Haptic Source type and use the foll
 
 To test a level with a Blueprint implementation you can open the HapticLevel map from the Plugins > Interhaptics Content and test with an XInput or compatible controller. The haptic sources will activate when pressing the A,B,X and Y buttons.
 
-You can check directly the documentation at https://www.interhaptics.com/doc/interhaptics-unreal-sdk/
+You can check directly the documentation at https://doc.wyvrn.com/docs/interhaptics-sdk/haptics-unreal-sdk/
 
 If you need help or want to talk haptics, join us on Discord on this links https://discord.com/invite/93jU9nAX4f
